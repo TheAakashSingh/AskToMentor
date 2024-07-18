@@ -1,0 +1,176 @@
+/* Header.css */
+
+/* Global reset and base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Light grey background for the body */
+  font-size: 14px;
+}
+
+/* Header styles */
+header {
+  background-color: #212a31; /* Dark blue background for the header */
+  color: #fff;
+  padding: 8px 20px; /* Reduced padding for top and bottom */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Updated shadow */
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo img {
+  width: 80px; /* Reduced width of the logo */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation links */
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px; /* Gap between navigation buttons */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative; /* Positioning context for sliding box */
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 15px 20px; /* Adjusted padding */
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  z-index: 0;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease; /* Added transform and box-shadow transitions */
+  background-color: transparent;
+  border: 2px solid transparent; /* Transparent border initially */
+}
+
+.nav-links a:hover {
+  transform: scale(1.01); /* Adjusted scale transformation */
+  background-color: #fff;
+}
+
+/* Rainbow gradient effect on AI Tutor button */
+.nav-links .ai-tutor a::before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000, #ff7300, #48ff00,
+    #00ffd5, #002bff, #ff00c8, #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(1px);
+  animation: glowing 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 15px;
+  opacity: 1; /* Show rainbow gradient by default */
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* Sign-in links */
+.sign {
+  display: flex;
+  align-items: center;
+}
+
+.signup,
+.login {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 20px; /* Adjusted padding */
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup {
+  background-color: #fff; /* White background for signup button */
+  color: #212a31; /* Dark blue text color */
+  margin-right: 15px;
+}
+
+.signup:hover {
+  background-color: #2e3944; /* Darker turquoise on hover */
+  color: #fff; /* White text color on hover */
+}
+
+.login {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+/* Change text color to #0d3445 on hover for non-AI Tutor buttons */
+.nav-links li:not(.ai-tutor):hover a {
+  color: #0d3445;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adjusted gap between navigation buttons */
+  }
+
+  .nav-links li {
+    margin-bottom: 5px; /* Reduced margin between navigation items */
+  }
+
+  .nav-links a {
+    padding: 12px 20px; /* Adjusted padding for smaller screens */
+    font-size: 0.9rem; /* Adjusted font size */
+  }
+
+  .logo img {
+    width: 60px; /* Adjusted logo size */
+  }
+
+  .sign {
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .signup,
+  .login {
+    padding: 8px 16px; /* Adjusted padding */
+    font-size: 0.9rem; /* Adjusted font size */
+    margin: 5px; /* Added margin */
+  }
+}

@@ -1,0 +1,507 @@
+/* DashboardHome.css */
+
+.dashboard-home-container {
+    background-color: #212a31;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #212a31;
+    border-bottom: 1px solid #444;
+}
+
+.header_mid1 {
+    display: flex;
+    justify-content: center;
+    background-color: #2b343b;
+    align-items: center;
+    padding: 10px 37px;
+    border-radius: 48px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for smooth effect */
+}
+
+.header_mid1:hover {
+    background-color: #2b343b; 
+    transform: scale(1.01);
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* SearchBar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-input {
+    padding: 19px 22px;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 29px 0 0 29px;
+    flex: 1;
+    background-color: #2e3944;
+    color: #fff;
+}
+
+.search-button {
+    background-color: #125e66;
+    color: #fff;
+    border: none;
+    height: 53px;
+    padding: 10px 20px;
+    border-radius: 0 29px 29px 0;
+    cursor: pointer;
+}
+
+/* Filters */
+.filters-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+ }
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Add margin for spacing */
+}
+
+.filter-icon {
+    font-size: 18px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+/* Custom Select Dropdown */
+.filter-select {
+    position: relative;
+    padding: 8px 15px; /* Adjust padding */
+    background-color: #2e3944; /* Darker background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    appearance: none;
+    font-size: 14px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation transition */
+}
+
+.filter-select::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #125e66; /* Default color */
+    z-index: -1;
+    transition: transform 0.3s ease; /* Animation transition */
+}
+
+.filter-select:hover::after {
+    transform: scaleX(2); /* Scale animation on hover */
+}
+
+.filter-select:focus::after {
+    background-color: #4CAF50; /* Focus color */
+}
+
+/* Custom Styling for Options */
+.filter-select option {
+    padding: 10px 15px; /* Adjust padding */
+    background-color: #2e3944; /* Darker background */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-select option[value="all"] {
+    background-color: #125e66; /* Specific color for 'All' */
+}
+
+.filter-select option[value="admin-support"] {
+    background-color: #4CAF50; /* Specific color for 'Admin Support' */
+}
+
+.filter-select option[value="graphic-designer"] {
+    background-color: #FF5722; /* Specific color for 'Graphic Designer' */
+}
+
+.filter-select option[value="data-scientist"] {
+    background-color: #9C27B0; /* Specific color for 'Data Scientist' */
+}
+
+.filter-select option[value="frontend-developer"] {
+    background-color: #FF9800; /* Specific color for 'Frontend Developer' */
+}
+
+.filter-select option[value="backend-developer"] {
+    background-color: #607D8B; /* Specific color for 'Backend Developer' */
+}
+
+.filter-select option[value="ui-ux-designer"] {
+    background-color: #2196F3; /* Specific color for 'UI/UX Designer' */
+}
+
+.filter-select option[value="full-stack-developer"] {
+    background-color: #673AB7; /* Specific color for 'Full Stack Developer' */
+}
+
+.filter-select option[value="software-engineer"] {
+    background-color: #E91E63; /* Specific color for 'Software Engineer' */
+}
+
+.filter-select option[value="cloud-engineer"] {
+    background-color: #00BCD4; /* Specific color for 'Cloud Engineer' */
+}
+
+.filter-select option[value="project-manager"] {
+    background-color: #8BC34A; /* Specific color for 'Project Manager' */
+}
+
+/* Results */
+.results {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.result-item {
+    margin-bottom: 20px;
+}
+
+.result-item h2 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.result-item p {
+    color: #ccc;
+}
+
+/* AdditionalContent */
+.additional-content {
+    background-color: #555;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.additional-content h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Logo */
+.logo img {
+    width: 80px;
+}
+
+/* Profile Menu */
+.profile-menu {
+    position: relative;
+  }
+  
+  .profile-icon {
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .profile-details {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    width: 150px; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-menu:hover .profile-details {
+    display: block;
+  }
+  
+  .profile-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .profile-menu .ant-btn {
+    margin-top: 5px;
+    background: none;
+    width: 100%;
+    color: #fff;
+    border: none;
+    text-align: left;
+  }
+  
+  .profile-menu .ant-btn-icon-only {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-menu .ant-btn-icon-only .anticon {
+    margin-right: 8px;
+  }
+  
+  .profile-menu .ant-btn-primary {
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+  
+  .profile-menu .ant-btn-primary:hover,
+  .profile-menu .ant-btn-primary:focus {
+    background-color: #45a049;
+    border-color: #45a049;
+  }
+  
+  .profile-menu .profile_menu_logout {
+    margin-top: 10px;
+    background-color: #125e66;
+    border-color: #125e66;
+    color: #fff;
+  }
+  
+  .profile-menu .profile_menu_logout:hover,
+  .profile-menu .profile_menu_logout:focus {
+    background-color: #125e66ce;
+    border-color: #125e66c3;
+  }
+  
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .header_mid1 {
+        padding: 10px 20px;
+        border-radius: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        /* flex-direction: column; */
+        /* align-items: flex-start; */
+        /* justify-content: ; */
+        gap: 10px;
+    }
+
+    .header_mid1 {
+        margin-top: 10px;
+        /* width: 100%; */
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .search-button {
+        width: auto;
+        /* border-radius: 0 29px 29px 0; */
+    }
+}
+
+@media (max-width: 622px) {
+    .filters-container {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    .logo>img{
+        width: 48px;
+    }
+    .header_mid1 {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 7px;
+    }
+
+    .search-button {
+        height: 43px;
+        width: 74px;
+        font-size: 11px;
+        padding: 2px 2px;
+    }
+
+    .filters-container {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+    }
+
+    .filter-item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px; /* Add margin-bottom for spacing */
+    }
+
+    .filter-select {
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .results, .additional-content {
+        padding: 10px;
+    }
+}
+/* mentor profile  */
+
+.mentors-list{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* MentorProfile.css */
+
+/* Mentor Profile Container */
+.mentor-profile {
+    display: flex;
+    flex-direction: column;
+    background-color: #2b343b;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    width: 342px;
+    height: auto;
+    text-align: left;
+}
+
+.mentor-profile:hover {
+    transform: translateY(-5px);
+}
+
+/* Profile Header */
+.profile-header-main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Profile Picture */
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-picture-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Profile Details */
+.profile-details2 {
+    flex: 1;
+}
+
+.profile-details2 h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.profile-location {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+.profile-description {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* Profile Details Footer */
+.profile-details-footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.profile-rating {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+.rating-number {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.profile-skills {
+    margin-top: 5px;
+    height: 70px;
+}
+
+.skill-button {
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.know-more-button {
+    background-color: #125e66;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.know-more-button:hover {
+    background-color: #0d4850;
+}
