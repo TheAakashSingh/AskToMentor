@@ -131,7 +131,7 @@ const SignupMentor = () => {
         )}
 
         <div className="loginForMentor">
-          <span>Already have account? </span>
+          <span>Already have accoun? </span>
           <Link to='/loginMentor' className="loginMentor">Login</Link>
 
         </div>

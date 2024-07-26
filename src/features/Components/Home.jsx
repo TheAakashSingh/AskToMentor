@@ -67,7 +67,7 @@ function Home() {
           <img src={mentorAds1} alt="Mentor Benefits" className="modal-image" />
           <h2 className="modal-title">Why Become a Mentor? 🌟</h2>
           <p className="modal-description">
-            🌟 <strong>Make a Difference</strong>: Share your expertise and guide the next generation of leaders. Help shape their careers and make a lasting impact. ✨
+            🌟 <strong>Makes a Difference</strong>: Share your expertise and guide the next generation of leaders. Help shape their careers and make a lasting impact. ✨
           </p>
           <p className="modal-description">
             💼 <strong>Enhance Your Skills</strong>: Gain new insights, broaden your horizons, and refine your mentoring skills. Connect with like-minded professionals and grow together. 📈
