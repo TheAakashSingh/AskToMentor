@@ -4,13 +4,13 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #131b3b, #212a31);
+    background: linear-gradient(135deg, #212A31, #303538)  !important;
     animation: fadeIn 1s ease-in-out;
 }
 
 .signup-mentor-box {
     text-align: center;
-    background: linear-gradient(135deg, #2f385e, #27333c); /* Deep blue gradient background */
+    background: linear-gradient(135deg, #212A31, #27333c); /* Deep blue gradient background */
     border-radius: 12px;
     padding: 40px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
