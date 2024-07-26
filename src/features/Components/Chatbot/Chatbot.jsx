@@ -165,8 +165,8 @@ function Chatbot() {
         
         <div className="phone-container">
           <div className="phone-header">
-            <img src="../../../../src/assets/l2.png" alt="Bot Avatar" className="bot-avatar" />
-            <span className="header-title">AskToMentor</span>
+            <img src="../../../../src/assets/logo.png" alt="Bot Avatar" className="bot-avatar" />
+            <span className="header-title">AskToBot</span>
             <span className="header-icons">
               <span className="reset-icon" onClick={resetChat}><GrRefresh /></span>
               <span className="close-icon" onClick={() => setIsChatOpen(false)}><GiCancel /></span>

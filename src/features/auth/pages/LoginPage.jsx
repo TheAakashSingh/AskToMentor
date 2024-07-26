@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../../styles/login.css"; // Import your CSS file if needed
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
+import axios from "axios";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,9 +35,10 @@ const LoginPage = () => {
   };
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     // Email format validation using regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
     if (!userInput.email || !userInput.password) {
       Swal.fire({
         title: "Something is missing",
@@ -50,7 +52,7 @@ const LoginPage = () => {
           confirmButton: "error-button"
         }
       });
-
+  
       // Check if email or password is empty to trigger error styles
       if (!userInput.email) {
         setEmailError(true);
@@ -71,21 +73,56 @@ const LoginPage = () => {
           confirmButton: "error-button"
         }
       });
-      
+  
       // Highlight email input with red border
       setEmailError(true);
     } else {
-      // Logic to handle successful login
-      Swal.fire({
-        title: "login Success",
-        icon: "success",
-        confirmButton:'success'
-       
-      });
-      navigate('/dashboard')
-      // Example: Call API or perform login action
+      try {
+        // Make API call to login
+        const response = await axios.post('http://localhost:5000/api/user/login', {
+          email: userInput.email,
+          password: userInput.password
+        });
+  
+        // Handle successful login
+        Swal.fire({
+          title: "Login Success",
+          icon: "success",
+          confirmButton: 'success'
+        });
+  
+        // Store token and user data in localStorage
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('userData', JSON.stringify(response.data.user)); // Store user data
+  
+        // Redirect to dashboard or any other page
+        navigate('/dashboard');
+      } catch (error) {
+        // Handle login error
+        Swal.fire({
+          title: "Login Failed",
+          text: error.response ? error.response.data.message : "An error occurred",
+          icon: "error",
+          customClass: {
+            container: "error-container",
+            popup: "error-popup",
+            title: "error-title",
+            content: "error-text",
+            confirmButton: "error-button"
+          }
+        });
+  
+        if (error.response && error.response.data.message.includes('email')) {
+          setEmailError(true);
+        }
+        if (error.response && error.response.data.message.includes('password')) {
+          setPasswordError(true);
+        }
+      }
     }
   };
+  
+
   return (
     <div className="login-main">
       <div className="login-left">

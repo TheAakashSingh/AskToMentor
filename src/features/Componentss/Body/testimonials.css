@@ -1,0 +1,73 @@
+.testimonial-card {
+  position: relative;
+  height: 350px; /* Adjust height as needed */
+  overflow: hidden;
+  margin-bottom: 20px; /* Add margin between testimonial cards */
+}
+
+.testimonial-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 200%;
+  position: absolute;
+  animation: scrollLeft 20s linear infinite; /* Animation settings */
+}
+
+@keyframes scrollLeft {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.testimonial-card:hover .testimonial-content {
+  animation-play-state: paused; /* Pause animation on hover */
+  cursor: pointer;
+}
+
+.testimonial-card img {
+  border-radius: 50%; /* Make the avatar image round */
+  width: 120px; /* Set a fixed width */
+  height: 120px; /* Set a fixed height */
+  object-fit: cover; /* Ensure the image covers the entire space */
+  margin-bottom: 15px; /* Margin at the bottom */
+}
+
+.text-content {
+  text-align: center; /* Align text content center */
+  padding: 0 20px; /* Padding for text content */
+}
+
+.person-name {
+  font-size: 18px; /* Adjust size of person's name */
+  font-weight: bold; /* Optionally, make the name bold */
+  color: #212a31; /* Optionally, customize name color */
+  margin-bottom: 5px; /* Add margin below person's name */
+}
+
+.role-text {
+  font-size: 1.2rem; /* Adjust size of role text */
+  color: #748d92; /* Custom color for role text */
+  margin-bottom: 10px; /* Add margin below role text */
+}
+
+.stars {
+  display: flex; /* Display stars horizontally */
+  justify-content: center; /* Center stars horizontally */
+  margin-top: 10px; /* Add margin on top */
+}
+
+.stars span {
+  font-size: 1.5rem; /* Adjust star icon size */
+  margin-right: 5px; /* Margin between stars */
+}
+
+/* Additional CSS for centering */
+.c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px; /* Adjust as needed */
+}

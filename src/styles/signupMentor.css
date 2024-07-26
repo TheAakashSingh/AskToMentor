@@ -1,0 +1,153 @@
+/* signupMentor.css */
+.signup-mentor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #131b3b, #212a31);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.signup-mentor-box {
+    text-align: center;
+    background: linear-gradient(135deg, #2f385e, #27333c); /* Deep blue gradient background */
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 40%;
+    max-width: 500px;
+    animation: slideUp 0.6s ease-out;
+}
+
+.signup-mentor-title {
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    font-weight: 700 !important;
+    font-size: 2rem !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+    border-bottom: 2px solid #175a17 !important;
+    padding-bottom: 18px !important;
+}
+
+.signup-mentor-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+}
+
+.signup-mentor-button-google,
+.signup-mentor-button-linkedin {
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.signup-mentor-button-google {
+    background-color: #ffffff !important; /* Light theme background */
+    color: #212a31 !important; /* Dark theme text color */
+    border: 2px solid #ffffff !important; /* Light border color */
+}
+
+.signup-mentor-button-linkedin {
+    background-color: #125e66 !important; /* LinkedIn primary color */
+    color: #ffffff !important;
+    border: 2px solid #125e66 !important; /* LinkedIn border color */
+}
+
+.signup-mentor-button-google:hover {
+    background-color: #f0f0f0 !important; /* Slightly darker on hover */
+    border-color: #f0f0f0 !important;
+}
+
+.signup-mentor-button-linkedin:hover {
+    background-color: #0e4d55 !important; /* Darker shade on hover */
+    border-color: #0e4d55 !important;
+}
+
+.signup-mentor-form {
+    margin-top: 20px;
+    color: #fff !important;
+}
+
+.signup-mentor-form label  {
+    color: #ffffff !important; /* Set label color to white */
+}
+
+#mobile_extra {
+    color: #ffffff !important; /* Set label color to white */
+}
+
+.marquess1 {
+    color: #a77b7b;
+    margin-top: 10px;
+}
+
+.signup-mentor-submit-button {
+    width: 100%;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.ant-input-affix-wrapper {
+    border-radius: 8px;
+    background-color: #1e2a33;
+    border: 2px solid #2b3a4b;
+    color: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+.ant-input-affix-wrapper:hover {
+    border-color: #3a4a5c;
+}
+
+.ant-input-prefix {
+    color: #9aa1b3; /* Light color for prefix icon */
+}
+
+.ant-input {
+    color: #ffffff;
+    background-color: #1e2a33;
+    border: none;
+}
+
+.ant-input::placeholder {
+    color: #7f8c9a; /* Placeholder text color */
+}
+
+.ant-form-item-extra {
+    color: #ffffff; /* Color for extra text */
+    font-size: 0.9rem; /* Slightly smaller text size */
+    margin-top: 8px; /* Space between the input field and the extra text */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.loginForMentor{
+    float: right;
+    margin-top: 9px;
+    color: #fff;
+}
+.loginMentor{
+    color: #ace2e8;
+    text-decoration: none;
+    font-size: 16px;
+}

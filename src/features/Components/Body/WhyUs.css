@@ -1,130 +1,122 @@
-/* WhyUs.css */
-
-.why-choose-us {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 40px;
-  margin-left: 20px;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+/* Reset and basic styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff; /* Light gray background */
+    color: #333; /* Dark gray text */
 }
 
-h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  text-align: left;
+/* Apply color theme */
+:root {
+    --primary-color: #fff; /* Dark blue */
+    --secondary-color: #fff; /* Grayish teal */
+    --accent-color: #fff; /* Light gray */
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  margin-left: 50px; /* Base margin-left for content */
-  margin-top: 20px; /* Adjusted top margin for content */
+/* Container for the entire app */
+.whyus-App {
+    padding: 20px;
 }
 
-.benefits {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-  padding: 20px;
+/* Heading styles */
+.whyus-h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+    text-align: left; /* Center align heading */
 }
 
-.benefits li {
-  margin-bottom: 20px; /* Adjusted bottom margin for benefits items */
+.whyus-h4 {
+    margin-bottom: 30px;
+    text-align: left; /* Center align subheading */
+    color: #fff;
 }
 
-.step1 {
-  font-weight: bold;
-  font-size: 1.5rem; /* Adjusted font size for steps */
-  margin-bottom: 5px;
+/* Features Section */
+.whyus-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-.expert {
-  margin-left: 10px; /* Margin-left for class expert */
+/* Feature Card Base Styles */
+.whyus-feature {
+    flex: 1 1 300px; /* Equal width for each feature */
+    background-color: #212a31; /* Light gray background color */
+    color: #fff; /* White text color */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items (image and text) */
+    text-align: center; /* Center align text */
 }
 
-.personalized {
-  margin-left: 50px; /* Margin-left for class personalized */
-  margin-top: 50px; /* Increased top margin */
+.whyus-feature:hover {
+    transform: translateY(-5px) scale(1.03); /* Zoom in slightly on hover */
+    box-shadow: 0 14px 18px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
-.flexible {
-  margin-left: 80px; /* Margin-left for class flexible */
-  margin-top: 50px; /* Increased top margin */
+.whyus-feature-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 150px; /* Set a fixed height for the icon container */
 }
 
-.community {
-  margin-left: 100px; /* Margin-left for class community */
-  margin-top: 50px; /* Increased top margin */
+.whyus-feature-icon-img {
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevent image from stretching */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+    transform: scale(1.2); /* Zoom effect on image */
+}
+.whyus-feature-icon-img1{
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevent image from stretching */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+    transform: scale(1.2); /* Zoom effect on image */
+}
+/* Reduce image size for Expert Mentors feature */
+.whyus-feature.expert-mentors .whyus-feature-icon-img {
+    max-width: 80%; /* Reduce the image size */
 }
 
-.academic {
-  margin-left: 0; /* Reset margin-left for desktop view */
-  margin-top: 50px; /* Increased top margin */
-  text-align: center; /* Center align text for mobile view */
+.whyus-feature:hover .whyus-feature-icon-img {
+    transform: scale(1.3); /* Zoom effect on image on hover */
 }
 
-.why-us-image {
-  width: 100%; /* Make image responsive */
-  max-width: 500px;
-  align-self: flex-start;
+.whyus-feature h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff; /* Blue heading */
 }
 
-.learn-more {
-  display: inline-block;
-  margin-top: 5px;
-  padding: 10px 10px;
-  background-color: #212a31;
-  color: #fff;
-  width: 200px;
-  height: 40px;
-  align-items: center;
-  text-align: center;
-  margin-left: 175px;
-  text-decoration: none;
-  border-radius: 25px;
-  font-size: 1.5rem; /* Adjusted font size */
+.whyus-feature p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #fff; /* White text color */
 }
 
-.learn-more:hover {
-  background-color: #124e66;
-  transition: ease 0.5s;
-}
 
-.why-us-image:hover {
-  transform: scale(1.16);
-  transition: ease-in 0.3s;
-  cursor: pointer;
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .why-choose-us {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center items horizontally on smaller screens */
-  }
+    .whyus-features {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .why-us-image {
-    margin-right: 0; /* Remove right margin on smaller screens */
-    margin-bottom: 20px; /* Add bottom margin for spacing */
-  }
-
-  .content {
-    margin-left: 0; /* Remove left margin on smaller screens */
-    text-align: center; /* Center text on smaller screens */
-  }
-
-  .expert,
-  .personalized,
-  .flexible,
-  .community {
-    margin-left: 0; /* Reset margin-left on smaller screens */
-  }
-
-  .academic {
-    text-align: left; /* Align text to the left for mobile view only */
-  }
-
-  .learn-more {
-    margin-left: 0; /* Remove left margin on smaller screens */
-  }
+    .whyus-feature {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
 }

@@ -5,7 +5,7 @@ import {
   MDBRow,
   MDBIcon,
 } from 'mdb-react-ui-kit';
-import './testimonials.css'; // Import your CSS file for styling
+import './testimonials.css';
 
 const testimonials = [
   {
@@ -46,6 +46,20 @@ const testimonials = [
 const App = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
+  // Function to handle changing testimonials manually
+  const handleNextTestimonial = () => {
+    setCurrentTestimonialIndex(prevIndex =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePrevTestimonial = () => {
+    setCurrentTestimonialIndex(prevIndex =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
+
+  // UseEffect to automatically change testimonials every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTestimonialIndex(prevIndex =>
@@ -58,55 +72,56 @@ const App = () => {
 
   return (
     <MDBContainer className="py-5">
-      <MDBRow className="d-flex justify-content-center">
-        <MDBCol md="10" xl="8" className="text-center">
-          <h3 className="testimonials-heading mb-4 mt-5">Testimonials</h3>
-          <p className="testimonials-paragraph mb-5 pb-2 mb-md-5 pb-md-0">
-            Hear from our subscribers about how AskToMentor has transformed their careers.
-          </p>
+      <MDBRow className="align-items-start">
+        <MDBCol md="12" lg="6" className="mb-4">
+          <h3 className="testimonials-heading mb-5">Testimonials</h3>
         </MDBCol>
       </MDBRow>
-      <MDBRow className="justify-content-center">
+      <MDBRow className="justify-content-center align-items-center">
         <MDBCol md="8" className="mb-4">
           <div className="testimonial-card">
             <div className="testimonial-content">
-              {testimonials.map((testimonial, index) => (
- <div
- key={index}
- className={`testimonial-slide ${index === currentTestimonialIndex ? 'active' : ''}`}
->
- <img
-   src={testimonial.avatar}
-   className="rounded-circle shadow-1-strong"
-   width="120"
-   height="120"
-   alt={testimonial.name}
- />
- <div className="text-content">
-   <div className="c">
-     <h5 className="person-name mb-3">{testimonial.name}</h5>
-     <h6 className="role-text mb-3">{testimonial.role}</h6>
-   </div>
-   <p className="px-xl-3">
-     <MDBIcon fas icon="quote-left" className="pe-2" />
-     {testimonial.quotes[0]} {/* Displaying only the first quote */}
-     <MDBIcon fas icon="quote-right" className="ps-2" />
-   </p>
-   <div className="stars">
-     {[...Array(5)].map((_, i) => (
-       <span key={i}>
-         {i < Math.floor(testimonial.stars) ? (
-           "⭐"
-         ) : (
-           i - testimonial.stars < 0.5 ? "⭐" : "☆"
-         )}
-       </span>
-     ))}
-   </div>
- </div>
-</div>
-
-              ))}
+              <div className={`testimonial-slide active clr`}>
+                <div className="controls">
+                  <button className="control-btn prev-btn" onClick={handlePrevTestimonial}>
+                    &lt;
+                  </button>
+                  <button className="control-btn next-btn" onClick={handleNextTestimonial}>
+                    &gt;
+                  </button>
+                </div>
+                <div>
+                  <img
+                    src={testimonials[currentTestimonialIndex].avatar}
+                    className="rounded-circle shadow-1-strong"
+                    width="120"
+                    height="120"
+                    alt={testimonials[currentTestimonialIndex].name}
+                  />
+                  <div className="text-content">
+                    <div className="c">
+                      <h5 className="person-name mb-3">{testimonials[currentTestimonialIndex].name}</h5>
+                      <h6 className="role-text mb-3">{testimonials[currentTestimonialIndex].role}</h6>
+                      <p className="px-xl-3 testimonials-paragraph">
+                        <MDBIcon fas icon="quote-left" className="pe-2" />
+                        {testimonials[currentTestimonialIndex].quotes[0]} {/* Displaying only the first quote */}
+                        <MDBIcon fas icon="quote-right" className="ps-2" />
+                      </p>
+                      <div className="stars">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i}>
+                            {i < Math.floor(testimonials[currentTestimonialIndex].stars) ? (
+                              "⭐"
+                            ) : (
+                              i - testimonials[currentTestimonialIndex].stars < 0.5 ? "⭐" : "☆"
+                            )}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </MDBCol>

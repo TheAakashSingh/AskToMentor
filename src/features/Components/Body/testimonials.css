@@ -1,73 +1,146 @@
 .testimonial-card {
   position: relative;
-  height: 350px; /* Adjust height as needed */
+  height: 400px;
+  width: 70%;
   overflow: hidden;
-  margin-bottom: 20px; /* Add margin between testimonial cards */
+  margin-bottom: 40px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 15%;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.25s;
+  cursor: pointer;
 }
 
 .testimonial-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.testimonial-card img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.text-content {
+  text-align: center;
+  color: #fff;
+}
+
+.person-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.role-text {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.testimonials-heading h3 {
+  font-size: 2rem; /* Increase font size to 2rem */
+  margin-top: 30px; /* Increase margin-top to 30px */
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.stars span {
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prev-btn,
+.next-btn {
+  background-color: #212a31;
+  width: 20px; /* Adjust width */
+  height: 40px; /* Adjust height */
+  border-radius: 100%; /* Make buttons perfectly circular */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: #2e3944; /* Darker shade when hovered */
+}
+
+.control-btn {
+  font-size: 1.2rem;
+  padding: 12px 24px;
+}
+
+.c {
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.clr {
+  background-color: #212a31;
+  border-radius: 20px;
+  height: 400px;
+  width: 70%;
+  max-width: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100%;
-  width: 200%;
-  position: absolute;
-  animation: scrollLeft 20s linear infinite; /* Animation settings */
+  color: #fff;
 }
 
-@keyframes scrollLeft {
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.testimonial-card:hover .testimonial-content {
-  animation-play-state: paused; /* Pause animation on hover */
-  cursor: pointer;
-}
-
-.testimonial-card img {
-  border-radius: 50%; /* Make the avatar image round */
-  width: 120px; /* Set a fixed width */
-  height: 120px; /* Set a fixed height */
-  object-fit: cover; /* Ensure the image covers the entire space */
-  margin-bottom: 15px; /* Margin at the bottom */
-}
-
-.text-content {
-  text-align: center; /* Align text content center */
-  padding: 0 20px; /* Padding for text content */
-}
-
-.person-name {
-  font-size: 18px; /* Adjust size of person's name */
-  font-weight: bold; /* Optionally, make the name bold */
-  color: #212a31; /* Optionally, customize name color */
-  margin-bottom: 5px; /* Add margin below person's name */
-}
-
-.role-text {
-  font-size: 1.2rem; /* Adjust size of role text */
-  color: #748d92; /* Custom color for role text */
-  margin-bottom: 10px; /* Add margin below role text */
-}
-
-.stars {
-  display: flex; /* Display stars horizontally */
-  justify-content: center; /* Center stars horizontally */
-  margin-top: 10px; /* Add margin on top */
-}
-
-.stars span {
-  font-size: 1.5rem; /* Adjust star icon size */
-  margin-right: 5px; /* Margin between stars */
-}
-
-/* Additional CSS for centering */
-.c {
+.clr-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px; /* Adjust as needed */
+}
+
+.testimonials-heading {
+  color: #fff;
+  text-align: left;
+  font-size: 25px;
+  padding-left: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.testimonials-paragraph {
+  color: #fff;
+  text-align: center; /* Align paragraph text to the center */
+  padding-left: 20px;
+  padding-right: 20px;
 }

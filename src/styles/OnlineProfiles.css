@@ -1,0 +1,56 @@
+/* OnlineProfiles.css */
+.online-profiles-container {
+    padding: 20px;
+    background-color: #2b343b;
+    border-radius: 8px;
+    margin: 22px 13px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .online-profiles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .profile-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border: 1px solid #2e3944;
+    border-radius: 100px;
+    padding: 7px 19px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .profile-item:hover{
+    transform: scale(1.02);
+    background-color: #313a40;
+    cursor: pointer;
+  }
+  
+  .profile-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .profile-picture-online {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-name {
+    font-weight: bold;
+  }
+  
+  .profile-status {
+    color: green;
+    font-size: 0.9em;
+  }
+  

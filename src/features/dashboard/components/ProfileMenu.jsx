@@ -6,11 +6,12 @@ import { SettingOutlined, UserOutlined } from '@ant-design/icons';
 const ProfileMenu = () => {
   const [showProfileDetails, setShowProfileDetails] = useState(false);
   const [showLogoutAlert, setShowLogoutAlert] = useState(false);
+  const [userName, setUserName] = useState('');
   const profileRef = useRef(null);
   const navigate = useNavigate();
 
   const toggleProfileDetails = () => {
-    setShowProfileDetails(!showProfileDetails);
+    setShowProfileDetails(prev => !prev);
   };
 
   const handleClickOutside = (event) => {
@@ -26,11 +27,32 @@ const ProfileMenu = () => {
     };
   }, []);
 
+  // useEffect(() => {
+  //   // Get user data from localStorage
+  //   const token = localStorage.getItem('token');
+  //   const userData = localStorage.getItem('userData');
+
+  //   if (!token || !userData) {
+  //     navigate('/login'); // Redirect if no token or user data
+  //     return;
+  //   }
+
+  //   try {
+  //     const parsedUserData = JSON.parse(userData);
+  //     setUserName(parsedUserData.name || ''); // Fallback if name is not available
+  //   } catch (error) {
+  //     console.error('Error parsing user data:', error);
+  //     navigate('/login'); // Redirect if there's an error parsing data
+  //   }
+  // }, [navigate]);
+
   const handleLogout = () => {
+    localStorage.removeItem('token'); // Clear the token from localStorage
+    localStorage.removeItem('userData'); // Clear the user data from localStorage
     setShowLogoutAlert(true);
     setTimeout(() => {
       setShowLogoutAlert(false);
-      navigate('/Login'); // Redirect to login page after hiding the alert
+      navigate('/login'); // Redirect to login page after hiding the alert
     }, 3000); // Hide alert after 3 seconds
     setShowProfileDetails(false);
   };
@@ -45,7 +67,7 @@ const ProfileMenu = () => {
       </div>
       {showProfileDetails && (
         <div className="profile-details">
-          <p>Welcome, User!</p>
+          <p>Welcome, {userName}!</p>
           <Button icon={<UserOutlined />} onClick={() => console.log('View Profile clicked')}>
             Profile
           </Button>

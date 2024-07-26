@@ -1,296 +1,309 @@
 /* login.css */
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  
-  html {
-    font-size: 10px;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    height: 100vh;
-  }
-  
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+.login-main {
+  display: flex;
+}
+
+.login-left {
+  flex-grow: 1;
+  height: 100vh;
+  background-color: #212a31;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-left img {
+  width: 400px;
+}
+
+.login-right {
+  height: 100vh;
+  flex-grow: 1;
+}
+
+.login-right-container {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-center {
+  margin: auto 0;
+  text-align: center;
+}
+
+.login-center h2 {
+  font-size: 3.5rem;
+}
+
+.login-center p {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+form input[type='text'],
+form input[type='email'],
+form input[type='password'] {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 0;
+  border-bottom: 1px solid #212a31;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.pass-input-div {
+  position: relative;
+}
+
+.pass-input-div svg {
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 35px;
+  cursor: pointer;
+}
+
+form button[type='button'] {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 600;
+  background-color: #124e66;
+  color: #d3d9d4;
+}
+
+.login-center-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-div {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.remember-div label {
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 2px;
+  color: #2e3944;
+}
+
+.forgot-pass-link {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #124e66;
+}
+
+.forgot-pass-link:hover {
+  text-decoration: underline;
+}
+
+.login-center-buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.login-center-buttons button:nth-child(1) {
+  background-color: #212a31;
+  color: #d3d9d4;
+  border: 3px solid #212a31;
+}
+
+.login-center-buttons button:nth-child(1):hover {
+  color: #212a31;
+  background-color: white;
+}
+
+.login-center-buttons button:nth-child(2) {
+  background-color: #2e3944;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.login-center-buttons button:nth-child(2) img {
+  width: 30px;
+}
+
+.login-center-buttons button:nth-child(2):hover {
+  background-color: #c4c4c457;
+}
+
+.login-bottom-p {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 40px;
+  color: #000;
+}
+
+.login-bottom-p a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #124e66;
+}
+
+.login-bottom-p a:hover {
+  text-decoration: underline;
+}
+
+/* Custom SweetAlert2 styles */
+.error-container {
+  font-family: "Poppins", sans-serif;
+}
+
+.error-popup {
+  border-radius: 10px;
+  width: 550px;
+  height: 380px;
+  color: #212a31;
+  background: white;
+  font-size: 15px;
+  backdrop-filter: blur(50px);
+  webkit-backdrop-filter: blur(100px);
+  box-shadow: 1px 8px 50px 10px #2e3944;
+}
+
+.error-title {
+  font-size: 4rem;
+  margin-top: 30px;
+  color: #2e3944;
+}
+
+.error-text {
+  font-size: 2rem;
+}
+
+.email-icon {
+  position: absolute;
+  left: 756px;
+
+  top: 54%;
+  font-size: 30px;
+  color: #212a31;
+  height: 100px;
+  transform: translateY(-50%);
+}
+
+.Usericon {
+  position: absolute;
+  left: 756px;
+  top: 36.5%;
+  font-size: 30px;
+  color: #212a31;
+  height: 100px;
+  transform: translateY(-50%);
+}
+
+.passwordicon {
+  position: absolute;
+  left: 756px;
+  top: 71%;
+  z-index: 1;
+  font-size: 30px;
+  color: #212a31;
+  height: 100px;
+  transform: translateY(-50%);
+}
+
+.passwordicon2 {
+  position: absolute;
+  left: 756px;
+  top: 80%;
+  z-index: 1;
+  font-size: 30px;
+  color: #212a31;
+  height: 100px;
+  transform: translateY(-50%);
+}
+
+.error-button {
+  background-color: #212a31;
+  color: #fff;
+  border-radius: 4px;
+  width: 50px;
+  height: 35px;
+}
+
+/* General styles for larger screens */
+@media only screen and (max-width: 768px) {
   .login-main {
-    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
   }
-  
-  .login-left {
-    flex-grow: 1;
-    height: 100vh;
-    background-color: #212a31;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+
   .login-left img {
-    width: 400px;
+    width: 250px;
+    /* Adjust image size for smaller screens */
   }
-  
-  .login-right {
-    height: 100vh;
-    flex-grow: 1;
-  }
-  
+
   .login-right-container {
-    height: 100%;
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    /* Full width for smaller screens */
+    padding: 20px;
+    /* Add padding to center content */
   }
-  
-  .login-center {
-    margin: auto 0;
-    text-align: center;
-  }
-  
+
   .login-center h2 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+    /* Decrease heading size */
   }
-  
+
   .login-center p {
-    font-weight: 400;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #000;
+    font-size: 1.6rem;
+    /* Decrease paragraph size */
+    margin-bottom: 20px;
+    /* Adjust spacing */
   }
-  
-  form input[type='text'],
+
   form input[type='email'],
-  form input[type='password'] {
-    width: 100%;
-    padding: 16px;
-    margin-bottom: 16px;
-    border: 0;
-    border-bottom: 1px solid #212a31;
-    outline: none;
-    box-sizing: border-box;
+  form input[type='password'],
+  form input[type='text'] {
+    padding: 12px;
+    /* Smaller input padding */
   }
-  
-  .pass-input-div {
-    position: relative;
-  }
-  
+
   .pass-input-div svg {
-    font-size: 20px;
-    position: absolute;
-    right: 10px;
-    bottom: 35px;
-    cursor: pointer;
+    font-size: 18px;
+    /* Decrease eye icon size */
   }
-  
-  form button[type='button'] {
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 30px;
-    font-weight: 600;
-    background-color: #124e66;
-    color: #d3d9d4;
-  }
-  
-  .login-center-options {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .remember-div {
-    display: flex;
-    align-items: center;
-    column-gap: 5px;
-  }
-  
-  .remember-div label {
-    font-size: 1.3rem;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 2px;
-    color: #2e3944;
-  }
-  
-  .forgot-pass-link {
-    text-decoration: none;
-    font-size: 1.3rem;
-    color: #124e66;
-  }
-  
-  .forgot-pass-link:hover {
-    text-decoration: underline;
-  }
-  
-  .login-center-buttons {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-  }
-  
-  .login-center-buttons button:nth-child(1) {
-    background-color: #212a31;
-    color: #d3d9d4;
-    border: 3px solid #212a31;
-  }
-  
-  .login-center-buttons button:nth-child(1):hover {
-    color: #212a31;
-    background-color: white;
-  }
-  
-  .login-center-buttons button:nth-child(2) {
-    background-color: #2e3944;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
-  }
-  
-  .login-center-buttons button:nth-child(2) img {
-    width: 30px;
-  }
-  
-  .login-center-buttons button:nth-child(2):hover {
-    background-color: #c4c4c457;
-  }
-  
+
   .login-bottom-p {
-    text-align: center;
-    font-size: 1.5rem;
-    padding-bottom: 40px;
-    color: #000;
+    font-size: 1.3rem;
+    /* Decrease bottom paragraph size */
+    padding-bottom: 20px;
+    /* Adjust spacing */
   }
-  
-  .login-bottom-p a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #124e66;
-  }
-  
-  .login-bottom-p a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Custom SweetAlert2 styles */
-  .error-container {
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .error-popup {
-    border-radius: 10px;
-    width: 550px;
-    height: 380px;
-    color: #212a31;
-    background: white;
-    font-size: 15px;
-    backdrop-filter: blur(50px);
-    webkit-backdrop-filter: blur(100px);
-    box-shadow: 1px 8px 50px 10px #2e3944;
-  }
-  
-  .error-title {
-    font-size: 4rem;
-    margin-top: 30px;
-    color: #2e3944;
-  }
-  
-  .error-text {
-    font-size: 2rem;
-  }
-  
-  .email-icon {
-    position: absolute;
-    left: 815px;
-    top: 46%;
-    font-size: 30px;
-    color: #212a31;
-    height: 100px;
-    transform: translateY(-50%);
-  }
-  
-  .Usericon{
-    position: absolute;
-    left: 815px;
-    top: 36.5%;
-    font-size: 30px;
-    color: #212a31;
-    height: 100px;
-    transform: translateY(-50%);
-  }
-  
-  .passwordicon{
-    position: absolute;
-    left: 815px;
-    top: 54.5%;
-    font-size: 30px;
-    color: #212a31;
-    height: 100px;
-    transform: translateY(-50%);
-  }
-  
-  .passwordicon2{
-    position: absolute;
-    left: 815px;
-    top: 64%;
-    font-size: 30px;
-    color: #212a31;
-    height: 100px;
-    transform: translateY(-50%);
-  }
-  
-  .error-button {
-    background-color: #212a31;
-    color: #fff;
-    border-radius: 4px;
-    width: 50px;
-    height: 35px;
-  }
-  
-  /* General styles for larger screens */
-  @media only screen and (max-width: 768px) {
-    .login-main {
-      flex-direction: column; /* Stack elements vertically */
-    }
-  
-    .login-left img {
-      width: 250px; /* Adjust image size for smaller screens */
-    }
-  
-    .login-right-container {
-      width: 100%; /* Full width for smaller screens */
-      padding: 20px; /* Add padding to center content */
-    }
-  
-    .login-center h2 {
-      font-size: 2.5rem; /* Decrease heading size */
-    }
-  
-    .login-center p {
-      font-size: 1.6rem; /* Decrease paragraph size */
-      margin-bottom: 20px; /* Adjust spacing */
-    }
-  
-    form input[type='email'],
-    form input[type='password'],
-    form input[type='text'] {
-      padding: 12px; /* Smaller input padding */
-    }
-  
-    .pass-input-div svg {
-      font-size: 18px; /* Decrease eye icon size */
-    }
-  
-    .login-bottom-p {
-      font-size: 1.3rem; /* Decrease bottom paragraph size */
-      padding-bottom: 20px; /* Adjust spacing */
-    }
-  }
-  
+}

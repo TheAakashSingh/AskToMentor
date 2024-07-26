@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Image from "../../../assets/logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
 import { BiSolidUser } from "react-icons/bi";
 import { RiLockPasswordFill } from "react-icons/ri";
 import "../../../styles/signup.css"; // Import your CSS file if needed
+import axios from "axios";
 
 const SignupPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -63,10 +64,10 @@ const SignupPage = () => {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
   };
-
-  const signup = () => {
+const navigate = useNavigate()
+  const signup = async () => {
     const { name, email, password, confirmPassword } = userInput;
-
+  
     // Validate inputs and show error messages
     if (!name || !email || !password || !confirmPassword) {
       Swal.fire({
@@ -88,10 +89,10 @@ const SignupPage = () => {
       if (!confirmPassword) setConfirmPasswordError(true);
       return;
     }
-
+  
     if (password !== confirmPassword) {
       Swal.fire({
-        title: "Passwords not matched",
+        title: "Passwords do not match",
         text: "Please make sure your passwords match.",
         icon: "warning",
         customClass: {
@@ -104,7 +105,7 @@ const SignupPage = () => {
       });
       return;
     }
-
+  
     if (!validateEmail(email)) {
       Swal.fire({
         title: "Invalid Email Format",
@@ -121,11 +122,64 @@ const SignupPage = () => {
       setEmailError(true);
       return;
     }
-
-    // Proceed with signup logic
-    console.log("Signing up...");
-    // Example: Call API or perform signup action
+  
+    try {
+      // Make API call to register user
+      const response = await axios.post('http://localhost:5000/api/user/register', {
+        name,
+        email,
+        password
+      });
+  
+      // Handle successful response
+      if (response.status === 201) {
+        Swal.fire({
+          title: "Registration Successful",
+          text: "You have been registered successfully.",
+          icon: "success",
+          customClass: {
+            container: "error-container",
+            popup: "error-popup",
+            title: "error-title",
+            content: "error-text",
+            confirmButton: "error-button",
+          },
+        });
+        // Optionally redirect to login or another page
+        navigate('/login')
+      }
+    } catch (error) {
+      // Handle error response
+      if (error.response && error.response.status === 400) {
+        Swal.fire({
+          title: "Registration Failed",
+          text: error.response.data.message || "User registration failed.",
+          icon: "error",
+          customClass: {
+            container: "error-container",
+            popup: "error-popup",
+            title: "error-title",
+            content: "error-text",
+            confirmButton: "error-button",
+          },
+        });
+      } else {
+        Swal.fire({
+          title: "Server Error",
+          text: "There was an issue with the server. Please try again later.",
+          icon: "error",
+          customClass: {
+            container: "error-container",
+            popup: "error-popup",
+            title: "error-title",
+            content: "error-text",
+            confirmButton: "error-button",
+          },
+        });
+      }
+    }
   };
+  
 
   return (
     <>

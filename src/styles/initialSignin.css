@@ -1,0 +1,82 @@
+/* InitialSign.css */
+.initial-sign-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #131b3b, #212a31); /* Deep blue gradient background */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation for container */
+  }
+  
+  .initial-sign-box {
+    text-align: center;
+    background: linear-gradient(135deg, #2f385e, #27333c); /* Deep blue gradient background */
+    border-radius: 12px; /* Rounded corners for the box */
+    padding: 40px; /* Padding inside the box */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for a floating effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+    width: 40%; /* Responsive width */
+    max-width: 500px; /* Max width for large screens */
+    animation: slideUp 0.6s ease-out; /* Slide-up animation for the box */
+  }
+  
+  .initial-sign-title {
+    color: #ffffff; /* White text color for title */
+    margin-bottom: 20px; /* Space below the title */
+    font-weight: 700; /* Bold font */
+    font-size: 2rem; /* Font size for title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for text readability */
+  }
+  
+  .separator {
+    border: 0;
+    border-top: 2px solid #125e66;
+    margin: 20px 0;
+   
+  }
+  
+  .initial-sign-buttons {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    gap: 40px; /* Space between buttons */
+    align-items: center; /* Center buttons */
+  }
+  
+  .initial-sign-button {
+    width: 100% !important; /* Full width buttons */
+    border-radius: 8px !important; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease !important; /* Smooth transitions for hover effects */
+    font-size: 1.3rem !important; /* Font size for buttons */
+  }
+  
+  .initial-sign-button a {
+    color: #ffffff; /* White text color for links inside buttons */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .initial-sign-button:hover {
+    background-color: #125e66; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly increase button size on hover */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Start with invisible */
+    }
+    to {
+      opacity: 1; /* End with fully visible */
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px); /* Start with slight offset */
+      opacity: 0; /* Start with invisible */
+    }
+    to {
+      transform: translateY(0); /* End at original position */
+      opacity: 1; /* End with fully visible */
+    }
+  }
+  

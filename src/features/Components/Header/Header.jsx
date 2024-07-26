@@ -1,11 +1,10 @@
-// Header.js
-
 import React from "react";
 import { Link } from "react-router-dom";
+import { Switch } from "antd";
 import logo from "../../../assets/logo.png";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ role, toggleRole }) => {
   return (
     <header>
       <nav className="navbar">
@@ -16,9 +15,7 @@ const Header = () => {
         </div>
         <ul className="nav-links">
           <li className="ai-tutor">
-            <Link to="/blogs">
-              AI Tutor
-            </Link>
+            <Link to="/blogs">AI Tutor</Link>
           </li>
           <li>
             <Link to="/explore">
@@ -39,16 +36,20 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/contact">
+            <Link to="/Contactus">
               Contact Us
               <span className="bg-slide"></span>
             </Link>
           </li>
         </ul>
         <div className="sign">
-          <Link to="/signup" className="signup">
-            Create Account
-          </Link>
+          <Switch
+            checkedChildren="Mentee"
+            unCheckedChildren="Mentor"
+            defaultChecked
+            onChange={toggleRole}
+          />
+          
           <Link to="/login" className="login">
             Login
           </Link>

@@ -1,164 +1,340 @@
-/* Welcome.css */
-
-/* Global Reset and Box Sizing */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Body Styles */
 body {
-  font-family: 'Roboto', sans-serif; /* Example font family */
-  background-color: #fff; /* Light background color */
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
 }
 
-/* Welcome Section */
 .welcome-section {
-  padding: 50px 10px; /* Padding top and bottom, reduce left and right */
-  margin-top: 1px;
-  height: 100vh; /* Full viewport height */
-  background-color: #212A31; /* Dark background color */
-  color: #fff; /* Text color */
-  position: relative; /* Position relative for gradient */
-  overflow: hidden; /* Hide overflow to prevent scrollbars */
+  padding: 20px 20px;
+  background-color: #212A31;
+  margin-top: 63px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-.welcome-section::before {
-  content: ''; /* Empty content for pseudo-element */
-  position: absolute; /* Position absolute */
-  top: 0; /* Align with top */
-  left: 0; /* Align with left */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background: radial-gradient(circle at var(--x, 5%) var(--y, 5%), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.05)); /* Less opaque white mix circular gradient */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+.highlight-text {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 18px;
+  margin-top: -17px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #5f87ff, #edd107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 15px;
 }
 
-.welcome-section:hover::before {
-  opacity: 0.15; /* Show gradient on hover */
-}
-
-/* Content Wrapper */
 .content-wrapper {
-  max-width: 1200px; /* Max width for content */
-  width: 90%; /* Width of content wrapper */
-  margin: 0 auto; /* Center align */
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Space between text and image */
-  align-items: center; /* Center align vertically */
+  max-width: 1200px;
+  width: 90%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 1s ease-in;
 }
 
-/* Text Content */
 .text-content {
-  flex: 1; /* Take remaining space */
-  text-align: left; /* Align text to the left */
+  flex: 1;
+  text-align: left;
 }
-
 .typewriter-text {
-  font-size: 36px; /* Adjusted font size for typewriter effect */
-  margin-top: 10vh; /* Reduced top margin for smaller screens */
-  margin-bottom: 20px; /* Bottom margin for spacing */
-  animation: slidein 4s; /* Use the sliding animation */
+  font-size: 36px;
+  margin-top: 10px;
+  padding-right: 20px;
+  /* width: fit-content !important; */
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #ffffff;
+  position: relative;
+  animation: typing 3.5s steps(40, end) forwards;
 }
 
-@keyframes slidein {
-  0% {
-    transform: translateX(-100%);
-    margin-left: 50px;
+.typewriter-text::after {
+  content: ' _';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  animation: blink-caret2 0.75s step-end infinite;
+  color: rgb(253, 253, 255);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret2 {
+  from,
+  to {
     opacity: 0;
   }
-  5% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  95% {
+  50% {
     opacity: 1;
   }
 }
 
-/* Get Started Button */
+.intro-text {
+  font-size: 18px;
+  width: 61rem !important;
+  line-height: 1.6;
+  margin-top: -4px !important;
+  opacity: 0;
+  overflow: hidden;
+  animation: zoomOut 1.5s ease-out 2s forwards;
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scaleX(3);
+    width: 100vw;
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    width: auto;
+    opacity: 1;
+  }
+}
+
+.curlyBlink {
+  background: linear-gradient(to bottom, #5f87ff, #edd107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 29px;
+}
+
+@keyframes blink-carets {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .cta-button {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #124E66; /* Button background color */
-  color: #fff; /* Button text color */
-  text-decoration: none; /* Remove underline */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 18px; /* Button font size */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
-  margin-top: 20px; /* Adjust top margin for spacing */
+  background-color: #124E66;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
 .cta-button:hover {
-  background-color: #0E3D52; /* Darker background color on hover */
-  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #0E3D52;
+  cursor: pointer;
 }
 
-/* Image Content */
 .image-content {
-  flex: 1; /* Take remaining space */
-  text-align: right; /* Align image content to the right */
+  flex: 1;
+  text-align: right;
+  animation: fadeIn 1.5s ease-in;
 }
 
 .hello-image {
   width: 100%;
-  max-width: 400px; /* Adjust size as needed */
+  max-width: 400px;
   height: auto;
-  margin-top: 5vh; /* Adjusted top margin for image */
 }
 
-/* Paragraph (p) Styles */
 .text-content p {
-  font-size: 18px; /* Font size for paragraphs */
-  line-height: 1.6; /* Line height for better readability */
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 10px;
 }
 
-/* Responsive Design */
+.mentor-section,
+.mentee-section {
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in;
+}
+
+.mentor-section h2,
+.mentee-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffdd57;
+}
+
+.mentor-section p,
+.mentee-section p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.mentor-section ul,
+.mentee-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.mentor-section ul li,
+.mentee-section ul li {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.join-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #124E66;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.join-button:hover {
+  background-color: #0E3D52;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .content-wrapper {
-    flex-direction: column; /* Stack content vertically on smaller screens */
-    text-align: center; /* Center align content */
+    flex-direction: column;
+    text-align: center;
   }
-
+  .highlight-text {
+    margin-left: 0;
+  }
   .typewriter-text {
-    font-size: 28px; /* Adjusted font size for smaller screens */
-    margin-top: 5vh; /* Reduced top margin for smaller screens */
+    font-size: 28px;
+    margin-top: 5vh;
   }
-
   .text-content p {
-    font-size: 16px; /* Adjusted font size for paragraphs on smaller screens */
+    font-size: 16px;
   }
-
   .hello-image {
-    margin-top: 3vh; /* Further reduced top margin for image on smaller screens */
+    margin-top: 3vh;
   }
 }
 
-/* Chatbot Button */
 .chatbot-button {
-  position: fixed; /* Fixed position for always visible */
-  bottom: 20px; /* Adjust bottom position as needed */
-  right: 20px; /* Align to right side */
-  width: 60px; /* Adjust width as needed */
-  height: 60px; /* Adjust height as needed */
-  background-color: #007bff; /* Button background color */
-  border-radius: 50%; /* Make it round */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #007bff;
+  border-radius: 50%;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it's above other content */
+  z-index: 1000;
 }
 
 .chatbot-image {
-  width: 40px; /* Adjust image size */
+  width: 40px;
   height: auto;
 }
 
 .chatbot-button:hover {
-  background-color: #0056b3; /* Darker background color on hover */
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mentor-section,
+.mentee-section {
+  margin-top: 20px;
+}
+
+.mentor-section h2,
+.mentee-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffdd57;
+}
+
+.mentor-section p,
+.mentee-section p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.mentor-section ul,
+.mentee-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.mentor-section ul li,
+.mentee-section ul li {
+  margin-bottom: 5px;
+  font-size: 16px;
+  list-style: inside;
+}
+
+.join-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #124E66;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.join-button:hover {
+  background-color: #0E3D52;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.text-content, .image-content {
+  opacity: 1;
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+
+
+
+.button-34:active {
+  transform: scale(.95);
 }

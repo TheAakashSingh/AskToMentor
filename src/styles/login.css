@@ -81,7 +81,7 @@ form input[type='password'] {
 
 .input-container .icon {
   position: absolute;
-  left: 30px; /* Adjusted left position for icon */
+  left: 0px;
   top: 35%; /* Adjusted top position for icon */
   transform: translateY(-50%);
   font-size: 25px;

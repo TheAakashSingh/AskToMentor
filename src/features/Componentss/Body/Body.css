@@ -1,0 +1,95 @@
+/* Body.css */
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+/* How It Works Section */
+.how-it-works {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column-reverse; /* Stack video below content on mobile */
+  align-items: center; /* Center align items */
+}
+
+.how-it-works h2 {
+  font-size: 3.5rem;
+  text-align: center; /* Center align the title */
+  margin-bottom: 50px;
+}
+
+.how-it-works-content {
+  flex: 1;
+  max-width: 100%; /* Ensure content doesn't exceed viewport width */
+  padding-right: 0; /* Remove padding between content and video */
+  text-align: center; /* Center align text content */
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Vertical gap between steps */
+}
+
+.step {
+  text-align: center; /* Center align steps */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative; /* Ensure relative positioning for z-index */
+  z-index: 1; /* Ensure content is above video */
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #124E66; /* Blue heading */
+}
+
+.step p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Video Styling */
+.video {
+  width: 100%; /* Full width for video on mobile */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  margin-top: 20px; /* Adjust top margin for spacing */
+}
+
+@media (min-width: 769px) {
+  .how-it-works {
+    flex-direction: row; /* Display content and video side by side on larger screens */
+    align-items: flex-start; /* Align items at the top */
+  }
+
+  .how-it-works-content {
+    flex: 1; /* Take two-thirds of the width */
+    padding-right: 20px; /* Add padding between content and video */
+    text-align: left; /* Align text content to the left */
+  }
+
+  .how-it-works-image {
+    flex: 1; /* Take one-third of the width */
+    margin-top: 40px; /* Adjust top margin for spacing */
+    text-align: right; /* Align video content to the right */
+  }
+
+  .video {
+    width: 80%; /* Adjust video width for desktop view */
+    max-width: 100%; /* Ensure video doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-top: 0; /* Reset top margin */
+  }
+}

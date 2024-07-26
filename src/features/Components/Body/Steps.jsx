@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import './Steps.css'; // Import your custom CSS file for App styling
 import Steps from './Steps.jsx';
 import questionImage from '../../../assets/question.png';
-import mentorImage from '../../../assets/mentor.png';
-import learningImage from '../../../assets/learning.png';
-import personImage from '../../../assets/person.png'; // Renamed asset for clarity
+import mentorImage from '../../../assets/mentor2.gif';
+import learningImage from '../../../assets/Gear.gif';
+import personImage from '../../../assets/cha.gif'; // Renamed asset for clarity
 
 const App = () => {
   return (
